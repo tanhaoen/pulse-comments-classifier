@@ -15,7 +15,7 @@ comments = df['Comment']
 categories = df['Category'].reset_index(drop=True)
 
 #General Cleaning
-cleaned = comments.apply(lambda x: re.sub("'s",'',x)) #remove all possessive word (?)
+cleaned = comments.apply(lambda x: re.sub("'s",'',x)) #remove all possessive word
 puncnum = '!"#$%&()*+, -./:;<=>?@[\]^_`{|}~' + '0123456789' + "'"
 t = str.maketrans(dict.fromkeys(puncnum," "))
 cleaned = cleaned.apply(lambda x: x.translate(t)) #remove all punctuation and numbers
