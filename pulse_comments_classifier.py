@@ -166,7 +166,7 @@ clf_names = ['Logistic Regression','LinearSVC','SVC','KNN',
 
 clf_default_scores = {}
 
-#Output accuracies in a list
+#Output accuracies in a dictionary
 for clf,name in zip(classifiers,clf_names):
     print(name)
     cvscore = cross_validate(clf,X_cv,y_cv,cv=10,verbose=2,scoring='accuracy')
